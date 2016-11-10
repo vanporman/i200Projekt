@@ -1,0 +1,17 @@
+/*Stylesheet for trainingTimer */
+.root{
+	-fx-background-color: #272822;
+}
+
+.label-title{
+	-fx-font-family: "Helvetica";
+	-fx-font-weight: bold;
+	-fx-font-size: 20;
+	-fx-text-fill: #66D9EF;
+}
+
+#stoppwatch-style{
+	-fx-font-family: "Terminal";
+	-fx-font-size: 50;
+	-fx-text-fill: #A6E22E;
+}
