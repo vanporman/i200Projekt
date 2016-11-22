@@ -10,6 +10,13 @@
 	-fx-text-fill: #66D9EF;
 }
 
+.label-excercise-title{
+	-fx-font-family: "Helvetica";
+	-fx-font-weight: bold;
+	-fx-font-size: 10;
+	-fx-text-fill: #66D9EF;
+}
+
 #stoppwatch-style{
 	-fx-font-family: "Terminal";
 	-fx-font-size: 50;

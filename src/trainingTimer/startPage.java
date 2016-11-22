@@ -9,21 +9,20 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class startPage {
+public class StartPage {
 	private GridPane avaGrid = new GridPane();
 	private Scene avaScene = new Scene(avaGrid, 235, 300);
+	Stage laud;
 	
-	public startPage(){
-		startStage();
+	public StartPage(Stage avaLaud){ //<-- konstruktor (kui nimi on sama klassiga)
+		avaLaud.setScene(avaScene); //<-- sceneile andsime stage kaasa
+		laud = avaLaud;
+		startStage(); //<-- k2ivitasime stagei
 	}
 
 	private void startStage() {
-		Stage avaLaud = new Stage();
-		//avaGrid.setGridLinesVisible(true);
 		avaGrid.setPadding(new Insets(10, 5, 10, 5));
 		avaScene.getStylesheets().add(getClass().getResource("appStyle.css").toExternalForm());
-		avaLaud.setScene(avaScene);
-		avaLaud.show();
 		
 		Label pealkiri = new Label("HARJUTUSED");
 		pealkiri.getStyleClass().add("label-title");
@@ -62,13 +61,13 @@ public class startPage {
 		avaGrid.getChildren().addAll(pealkiri, harjutus1, harjutus2, harjutus3, stopperFormat, startBtn, stopBtn, resetBtn, closeApp);
 		
 		/*
-		 * Nupud
+		 * Nupud - lähevad uude klassi
 		 * -----
 		 * Harjutus 1
 		 */
 		harjutus1.setOnAction(event ->{
 			System.out.println("KLIKK HARJUTUS 1");
-			//avaLaud.setScene(sceneHr1);
+			new Excercise1(laud);
 		});
 		
 		/*
@@ -76,7 +75,7 @@ public class startPage {
 		 */
 		harjutus2.setOnAction(event ->{
 			System.out.println("KLIKK HARJUTUS 2");
-			//avaLaud.setScene(sceneHr2);
+			new Excercise2(laud);
 		});
 		
 		/*
@@ -84,7 +83,7 @@ public class startPage {
 		 */
 		harjutus3.setOnAction(event ->{
 			System.out.println("KLIKK HARJUTUS 3");
-			//avaLaud.setScene(sceneHr3);
+			new Excercise3(laud);
 		});
 		
 		/*

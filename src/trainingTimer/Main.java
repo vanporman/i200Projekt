@@ -9,7 +9,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
-		new startPage();
+		Stage avaLaud = new Stage();
+		new StartPage(avaLaud); //<-- l6ime uue objekti starPage klassist ja andsin stagei kaasa
+		avaLaud.show();
 		
 	}
 	
