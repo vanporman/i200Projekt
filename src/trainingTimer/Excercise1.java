@@ -32,10 +32,10 @@ public class Excercise1{
 		GridPane.setHalignment(pealkiri, HPos.CENTER);
 		GridPane.setConstraints(pealkiri, 1, 1, 3, 1);
 		
-		Label setCountdownHr2 = new Label("SET COUNTDOWN");
-		setCountdownHr2.getStyleClass().add("label-set-countdown-title");
-		GridPane.setHalignment(setCountdownHr2, HPos.CENTER);
-		GridPane.setConstraints(setCountdownHr2, 1, 2, 2, 1);
+		Label setCountdownHr1 = new Label("SET COUNTDOWN");
+		setCountdownHr1.getStyleClass().add("label-set-countdown-title");
+		GridPane.setHalignment(setCountdownHr1, HPos.CENTER);
+		GridPane.setConstraints(setCountdownHr1, 1, 2, 2, 1);
 		
 		TextField countdownFormatHr2 = new TextField();
 		countdownFormatHr2.getStyleClass().add("input-field");
@@ -66,7 +66,7 @@ public class Excercise1{
 		backButtonHr1.setPrefWidth(235);
 		GridPane.setConstraints(backButtonHr1, 1, 5, 3, 1);
 		
-		gridHr1.getChildren().addAll(pealkiri, setCountdownHr2, countdownFormatHr2, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr1);
+		gridHr1.getChildren().addAll(pealkiri, setCountdownHr1, countdownFormatHr2, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr1);
 		
 		backButtonHr1.setOnAction(event ->{
 			System.out.println("KLIKK TAGASI AVAVAATESSE");

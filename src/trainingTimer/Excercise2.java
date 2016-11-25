@@ -21,6 +21,8 @@ public class Excercise2 {
 	
 	private void startHr2(Stage avaLaud){
 		gridHr2.setPadding(new Insets(10, 5, 10, 5));
+		gridHr2.setHgap(5);
+		gridHr2.setVgap(5);
 		sceneHr2.getStylesheets().add(getClass().getResource("appStyle.css").toExternalForm());
 //		gridHr2.setGridLinesVisible(true);
 		
@@ -35,6 +37,7 @@ public class Excercise2 {
 		GridPane.setConstraints(setCountdownHr2, 1, 2, 2, 1);
 		
 		TextField countdownFormatHr2 = new TextField();
+		countdownFormatHr2.getStyleClass().add("input-field");
 		countdownFormatHr2.setPromptText("00");
 		countdownFormatHr2.setPrefWidth(85);
 		GridPane.setConstraints(countdownFormatHr2, 3, 2, 1, 1);
@@ -45,16 +48,20 @@ public class Excercise2 {
 		GridPane.setConstraints(stopperFormat, 1, 3, 3, 1);
 		
 		Button startBtn = new Button("START");
+		startBtn.getStyleClass().add("button-start");
 		startBtn.setPrefWidth(75);
 		GridPane.setConstraints(startBtn, 1, 4);
 		Button stopBtn = new Button("STOP");
+		stopBtn.getStyleClass().add("button-stop");
 		stopBtn.setPrefWidth(85);
 		GridPane.setConstraints(stopBtn, 2, 4);
 		Button resetBtn = new Button("RESET");
+		resetBtn.getStyleClass().add("button-start");
 		resetBtn.setPrefWidth(75);
 		GridPane.setConstraints(resetBtn, 3, 4);
 
-		Button backButtonHr2 = new Button("...tagasi");
+		Button backButtonHr2 = new Button("TAGASI");
+		backButtonHr2.getStyleClass().add("button-back");
 		backButtonHr2.setPrefWidth(235);
 		GridPane.setConstraints(backButtonHr2, 1, 5, 3, 1);
 		

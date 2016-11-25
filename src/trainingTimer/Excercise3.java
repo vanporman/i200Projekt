@@ -21,6 +21,8 @@ public class Excercise3 {
 	
 	private void startHr3(Stage avaLaud){
 		gridHr3.setPadding(new Insets(10, 5, 10, 5));
+		gridHr3.setHgap(5);
+		gridHr3.setVgap(5);
 		sceneHr3.getStylesheets().add(getClass().getResource("appStyle.css").toExternalForm());
 //		gridHr3.setGridLinesVisible(true);
 		
@@ -29,15 +31,16 @@ public class Excercise3 {
 		GridPane.setHalignment(pealkiri, HPos.CENTER);
 		GridPane.setConstraints(pealkiri, 1, 1, 3, 1);
 		
-		Label setCountdownHr2 = new Label("SET COUNTDOWN");
-		setCountdownHr2.getStyleClass().add("label-set-countdown-title");
-		GridPane.setHalignment(setCountdownHr2, HPos.CENTER);
-		GridPane.setConstraints(setCountdownHr2, 1, 2, 2, 1);
+		Label setCountdownHr3 = new Label("SET COUNTDOWN");
+		setCountdownHr3.getStyleClass().add("label-set-countdown-title");
+		GridPane.setHalignment(setCountdownHr3, HPos.CENTER);
+		GridPane.setConstraints(setCountdownHr3, 1, 2, 2, 1);
 		
-		TextField countdownFormatHr2 = new TextField();
-		countdownFormatHr2.setPromptText("00");
-		countdownFormatHr2.setPrefWidth(85);
-		GridPane.setConstraints(countdownFormatHr2, 3, 2, 1, 1);
+		TextField countdownFormatHr3 = new TextField();
+		countdownFormatHr3.getStyleClass().add("input-field");
+		countdownFormatHr3.setPromptText("00");
+		countdownFormatHr3.setPrefWidth(85);
+		GridPane.setConstraints(countdownFormatHr3, 3, 2, 1, 1);
 		
 		Label stopperFormat = new Label("00:00:00");
 		stopperFormat.setId("stoppwatch-style");
@@ -45,20 +48,24 @@ public class Excercise3 {
 		GridPane.setConstraints(stopperFormat, 1, 3, 3, 1);
 		
 		Button startBtn = new Button("START");
+		startBtn.getStyleClass().add("button-start");
 		startBtn.setPrefWidth(75);
 		GridPane.setConstraints(startBtn, 1, 4);
 		Button stopBtn = new Button("STOP");
+		stopBtn.getStyleClass().add("button-stop");
 		stopBtn.setPrefWidth(85);
 		GridPane.setConstraints(stopBtn, 2, 4);
 		Button resetBtn = new Button("RESET");
+		resetBtn.getStyleClass().add("button-start");
 		resetBtn.setPrefWidth(75);
 		GridPane.setConstraints(resetBtn, 3, 4);
 
-		Button backButtonHr3 = new Button("...tagasi");
+		Button backButtonHr3 = new Button("TAGASI");
+		backButtonHr3.getStyleClass().add("button-back");
 		backButtonHr3.setPrefWidth(235);
 		GridPane.setConstraints(backButtonHr3, 1, 5, 3, 1);
 		
-		gridHr3.getChildren().addAll(pealkiri, setCountdownHr2, countdownFormatHr2, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr3);
+		gridHr3.getChildren().addAll(pealkiri, setCountdownHr3, countdownFormatHr3, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr3);
 		
 		backButtonHr3.setOnAction(event ->{
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
