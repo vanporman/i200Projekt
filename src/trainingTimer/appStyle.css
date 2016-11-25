@@ -1,6 +1,6 @@
 /*Stylesheet for trainingTimer */
 .root{
-	-fx-background-color: #272822;
+	-fx-background-color: #272822;/*#272822 */
 }
 
 .label-title{
@@ -17,8 +17,56 @@
 	-fx-text-fill: #66D9EF;
 }
 
+.label-set-countdown-title{
+	-fx-font-family: "Helvetica";
+	/*-fx-font-weight: bold;*/
+	-fx-font-size: 15;
+	-fx-text-fill: #ffff00;
+}
+
 #stoppwatch-style{
 	-fx-font-family: "Terminal";
 	-fx-font-size: 50;
 	-fx-text-fill: #A6E22E;
+}
+
+.input-field{
+	-fx-border-color: #ffff00;
+	-fx-border-width: 2px;
+	-fx-padding: 4;
+}
+
+.button-start{
+	-fx-background-color: transparent;
+	-fx-border-color: #00cc00;
+	-fx-border-width: 1px;
+	-fx-text-fill: #A6E22E;
+	-fx-padding: 5;
+}
+
+.button-stop{
+	-fx-background-color: transparent;
+	-fx-border-color: #ff3300;
+	-fx-border-width: 1px;
+	-fx-text-fill: #ff704d;
+	-fx-border-width: 2px;
+	-fx-padding: 4;
+	-fx-font-weight: bold;
+}
+
+.button-choose-excercise{
+	-fx-background-color: transparent;
+	-fx-border-color: #3399ff;
+	-fx-border-width: 1px;
+	-fx-text-fill: #66D9EF;
+	-fx-padding: 5;
+}
+
+.button-back{
+	-fx-background-color: transparent;
+	-fx-border-color: #3399ff;
+	-fx-border-width: 1px;
+	-fx-text-fill: #66D9EF;
+	-fx-padding: 5;
+	-fx-font-weight: bold;
 }

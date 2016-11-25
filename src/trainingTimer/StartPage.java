@@ -22,7 +22,10 @@ public class StartPage {
 
 	private void startStage() {
 		avaGrid.setPadding(new Insets(10, 5, 10, 5));
+		avaGrid.setHgap(5);
+		avaGrid.setVgap(5);
 		avaScene.getStylesheets().add(getClass().getResource("appStyle.css").toExternalForm());
+//		avaGrid.setGridLinesVisible(true);
 		
 		Label pealkiri = new Label("HARJUTUSED");
 		pealkiri.getStyleClass().add("label-title");
@@ -30,12 +33,15 @@ public class StartPage {
 		GridPane.setConstraints(pealkiri, 1, 1, 3, 1);
 		
 		Button harjutus1 = new Button("Wall Sit");
+		harjutus1.getStyleClass().add("button-choose-excercise");
 		harjutus1.setPrefWidth(75);
 		GridPane.setConstraints(harjutus1, 1, 2);
 		Button harjutus2 = new Button("Plank");
+		harjutus2.getStyleClass().add("button-choose-excercise");
 		harjutus2.setPrefWidth(85);
 		GridPane.setConstraints(harjutus2, 2, 2);
 		Button harjutus3 = new Button("Side Plank");
+		harjutus3.getStyleClass().add("button-choose-excercise");
 		harjutus3.setPrefWidth(75);
 		GridPane.setConstraints(harjutus3, 3, 2);
 		
@@ -45,16 +51,20 @@ public class StartPage {
 		GridPane.setConstraints(stopperFormat, 1, 4, 3, 1);
 		
 		Button startBtn = new Button("START");
+		startBtn.getStyleClass().add("button-start");
 		startBtn.setPrefWidth(75);
 		GridPane.setConstraints(startBtn, 1, 5);
 		Button stopBtn = new Button("STOP");
+		stopBtn.getStyleClass().add("button-stop");
 		stopBtn.setPrefWidth(85);
 		GridPane.setConstraints(stopBtn, 2, 5);
 		Button resetBtn = new Button("RESET");
+		resetBtn.getStyleClass().add("button-start");
 		resetBtn.setPrefWidth(75);
 		GridPane.setConstraints(resetBtn, 3, 5);
 		
 		Button closeApp = new Button("SULGE");
+		closeApp.getStyleClass().add("button-stop");
 		closeApp.setPrefWidth(235);
 		GridPane.setConstraints(closeApp, 1, 6, 3, 1);
 		
