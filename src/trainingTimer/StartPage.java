@@ -13,6 +13,8 @@ public class StartPage {
 	private GridPane avaGrid = new GridPane();
 	private Scene avaScene = new Scene(avaGrid, 235, 300);
 	Stage laud;
+	public static int taimeriOlek = 0; // 0-jookseb, 1-seisab
+	public static int harjutuseValik = 0; // 1-wall sit, 2-plank, 3-side plank
 	
 	public StartPage(Stage avaLaud){ //<-- konstruktor (kui nimi on sama klassiga)
 		avaLaud.setScene(avaScene); //<-- sceneile andsime stage kaasa
@@ -76,37 +78,46 @@ public class StartPage {
 		 * Harjutus 1
 		 */
 		harjutus1.setOnAction(event ->{
+			harjutuseValik = 1;
 			System.out.println("KLIKK HARJUTUS 1");
-			new Excercise1(laud);
+			new WallSitWindow(laud);
 		});
 		
 		/*
 		 * Harjutus 2
 		 */
 		harjutus2.setOnAction(event ->{
+			harjutuseValik = 2;
 			System.out.println("KLIKK HARJUTUS 2");
-			new Excercise2(laud);
+			new PlankWindow(laud);
 		});
 		
 		/*
 		 * Harjutus 3
 		 */
 		harjutus3.setOnAction(event ->{
+			harjutuseValik = 3;
 			System.out.println("KLIKK HARJUTUS 3");
-			new Excercise3(laud);
+			new SidePlankWindow(laud);
 		});
 		
 		/*
 		 * Avavaate START nupp
 		 */
 		startBtn.setOnAction(event ->{
+			taimeriOlek = 0;
 			System.out.println("START KLIKK AVAVAATES");
+			Stopper start = new Stopper();
+			start.startStopper();
 		});
 		
 		/*
 		 * Avavaate STOPP nupp
 		 */
 		stopBtn.setOnAction(event ->{
+			taimeriOlek = 1;
+			Stopper stop = new Stopper();
+			stop.startStopper();
 			System.out.println("STOPP KLIKK AVAVAATES");
 		});
 		
@@ -115,6 +126,7 @@ public class StartPage {
 		 */
 		resetBtn.setOnAction(event ->{
 			System.out.println("RESET KLIKK AVAVAATES");
+			//RESETIB numbrid nulliks
 		});
 		/*
 		 * SULGEB RAKENDUSE

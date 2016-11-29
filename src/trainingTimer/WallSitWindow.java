@@ -9,13 +9,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Excercise1{
+public class WallSitWindow{
 	
+//	public static int aegStardini;
 	private GridPane gridHr1 = new GridPane();
 	private Scene sceneHr1 = new Scene(gridHr1, 235, 300);
 	Stage avaLaud;
 	
-	public Excercise1(Stage avaLaud){
+	public WallSitWindow(Stage avaLaud){
 		avaLaud.setScene(sceneHr1);
 		startHr1(avaLaud);
 	}
@@ -37,11 +38,11 @@ public class Excercise1{
 		GridPane.setHalignment(setCountdownHr1, HPos.CENTER);
 		GridPane.setConstraints(setCountdownHr1, 1, 2, 2, 1);
 		
-		TextField countdownFormatHr2 = new TextField();
-		countdownFormatHr2.getStyleClass().add("input-field");
-		countdownFormatHr2.setPromptText("00");
-		countdownFormatHr2.setPrefWidth(85);
-		GridPane.setConstraints(countdownFormatHr2, 3, 2, 1, 1);
+		TextField countdownFormatHr1 = new TextField();
+		countdownFormatHr1.getStyleClass().add("input-field");
+		countdownFormatHr1.setPromptText("00");
+		countdownFormatHr1.setPrefWidth(85);
+		GridPane.setConstraints(countdownFormatHr1, 3, 2, 1, 1);
 		
 		Label stopperFormat = new Label("00:00:00");
 		stopperFormat.setId("stoppwatch-style");
@@ -66,7 +67,37 @@ public class Excercise1{
 		backButtonHr1.setPrefWidth(235);
 		GridPane.setConstraints(backButtonHr1, 1, 5, 3, 1);
 		
-		gridHr1.getChildren().addAll(pealkiri, setCountdownHr1, countdownFormatHr2, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr1);
+		gridHr1.getChildren().addAll(pealkiri, setCountdownHr1, countdownFormatHr1, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr1);
+		
+		startBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 0;
+			
+			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr1.getText()));
+			Countdown.aegStardini = Integer.parseInt(countdownFormatHr1.getText());
+			
+			System.out.println("START");
+			
+			Countdown countdownToStart = new Countdown();
+			countdownToStart.alustaAllalugemist();
+		});
+		
+		stopBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 1;
+			
+			Stopper stop = new Stopper();
+			stop.startStopper();
+			
+			Countdown stop2 = new Countdown();
+			stop2.alustaAllalugemist();
+			
+			System.out.println("STOPP KLIKK WALL SIT VAATES");
+		});
+		
+		resetBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 0;
+			
+			System.out.println("RESET KLIKK WALL SIT VAATES");
+		});
 		
 		backButtonHr1.setOnAction(event ->{
 			System.out.println("KLIKK TAGASI AVAVAATESSE");

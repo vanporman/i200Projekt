@@ -9,12 +9,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Excercise2 {
+public class PlankWindow {
+	
 	private GridPane gridHr2 = new GridPane();
 	private Scene sceneHr2 = new Scene(gridHr2, 235, 300);
 	Stage avaLaud;
+//	private static int aegStardini;
 	
-	public Excercise2(Stage avaLaud){
+	public PlankWindow(Stage avaLaud){
 		avaLaud.setScene(sceneHr2);
 		startHr2(avaLaud);
 	}
@@ -66,6 +68,36 @@ public class Excercise2 {
 		GridPane.setConstraints(backButtonHr2, 1, 5, 3, 1);
 		
 		gridHr2.getChildren().addAll(pealkiri, setCountdownHr2, countdownFormatHr2, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr2);
+		
+		startBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 0;
+			
+			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr2.getText()));
+			Countdown.aegStardini = Integer.parseInt(countdownFormatHr2.getText());
+			
+			System.out.println("START");
+			
+			Countdown countdownToStart = new Countdown();
+			countdownToStart.alustaAllalugemist();
+		});
+		
+		stopBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 1;
+			
+			Countdown stop2 = new Countdown();
+			stop2.alustaAllalugemist();
+			
+			Stopper stop = new Stopper();
+			stop.startStopper();
+			
+			System.out.println("STOPP KLIKK PLANK VAATES");
+		});
+		
+		resetBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 0;
+			
+			System.out.println("RESET KLIKK PLANK VAATES");
+		});
 		
 		backButtonHr2.setOnAction(event ->{
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
