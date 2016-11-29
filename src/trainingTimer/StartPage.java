@@ -79,7 +79,7 @@ public class StartPage {
 		 */
 		harjutus1.setOnAction(event ->{
 			harjutuseValik = 1;
-			System.out.println("KLIKK HARJUTUS 1");
+			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
 			new WallSitWindow(laud);
 		});
 		
@@ -88,7 +88,7 @@ public class StartPage {
 		 */
 		harjutus2.setOnAction(event ->{
 			harjutuseValik = 2;
-			System.out.println("KLIKK HARJUTUS 2");
+			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
 			new PlankWindow(laud);
 		});
 		
@@ -97,7 +97,7 @@ public class StartPage {
 		 */
 		harjutus3.setOnAction(event ->{
 			harjutuseValik = 3;
-			System.out.println("KLIKK HARJUTUS 3");
+			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
 			new SidePlankWindow(laud);
 		});
 		
@@ -126,6 +126,7 @@ public class StartPage {
 		 */
 		resetBtn.setOnAction(event ->{
 			System.out.println("RESET KLIKK AVAVAATES");
+			System.out.println("harjutseValik: " + harjutuseValik);
 			//RESETIB numbrid nulliks
 		});
 		/*

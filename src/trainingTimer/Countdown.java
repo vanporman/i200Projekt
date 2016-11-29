@@ -20,18 +20,18 @@ public class Countdown {
 					if (aegMaha < 2){
 						aegMaha--;
 						System.out.println("STARTS");
-						if (aegMaha == 0 && harjutus == 1){
-							System.out.println("Tegemist on WALL SIT harjutusega");
+						if (harjutus == 1 && aegMaha == 0){
+							System.out.println("Tegemist on WALL SIT harjutusega " + harjutus);
 							allaLugemiseTimer.cancel();
 							WSaPTimer harjutus1 = new WSaPTimer();
 							harjutus1.startTimerHr();
-						} else if (aegMaha == 0 && harjutus == 2){
-							System.out.println("Tegemist on PLANK harjutusega");
+						} else if (harjutus == 2 && aegMaha == 0){
+							System.out.println("Tegemist on PLANK harjutusega " + harjutus);
 							allaLugemiseTimer.cancel();
 							WSaPTimer harjutus2 = new WSaPTimer();
 							harjutus2.startTimerHr();
-						} else if (aegMaha == 0 && harjutus == 3){
-							System.out.println("Tegemist on SIDE PLANK harjutusega");
+						} else if (harjutus == 3 && aegMaha == 0){
+							System.out.println("Tegemist on SIDE PLANK harjutusega " + harjutus);
 							allaLugemiseTimer.cancel();
 							SPTimer harjutus3 = new SPTimer();
 							harjutus3.startTimerHr2();

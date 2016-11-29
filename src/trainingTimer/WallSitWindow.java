@@ -71,12 +71,9 @@ public class WallSitWindow{
 		
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
-			
 			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr1.getText()));
 			Countdown.aegStardini = Integer.parseInt(countdownFormatHr1.getText());
-			
 			System.out.println("START");
-			
 			Countdown countdownToStart = new Countdown();
 			countdownToStart.alustaAllalugemist();
 		});
@@ -86,20 +83,18 @@ public class WallSitWindow{
 			
 			Stopper stop = new Stopper();
 			stop.startStopper();
-			
 			Countdown stop2 = new Countdown();
 			stop2.alustaAllalugemist();
-			
 			System.out.println("STOPP KLIKK WALL SIT VAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 0;
-			
 			System.out.println("RESET KLIKK WALL SIT VAATES");
 		});
 		
 		backButtonHr1.setOnAction(event ->{
+			StartPage.harjutuseValik = 0;
+//			System.out.println("harjutseValik: " + StartPage.harjutuseValik);
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);
 		});

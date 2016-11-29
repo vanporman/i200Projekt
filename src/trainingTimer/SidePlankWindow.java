@@ -71,12 +71,9 @@ public class SidePlankWindow {
 		
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
-			
 			System.out.println("Kasutaja sisestas: " + Integer.parseInt(countdownFormatHr3.getText()));
 			Countdown.aegStardini = Integer.parseInt(countdownFormatHr3.getText());
-			
 			System.out.println("START");
-			
 			Countdown countdownToStart = new Countdown();
 			countdownToStart.alustaAllalugemist();
 		});
@@ -86,22 +83,18 @@ public class SidePlankWindow {
 			
 			Countdown stop2 = new Countdown();
 			stop2.alustaAllalugemist();
-			
 			Stopper stop = new Stopper();
 			stop.startStopper();
-			
-			
 			System.out.println("STOPP KLIKK AVAVAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 0;
-			
 			System.out.println("RESET KLIKK WALL SIT VAATES");
 		});
 		
-		
 		backButtonHr3.setOnAction(event ->{
+			StartPage.harjutuseValik = 0;
+//			System.out.println("harjutseValik: " + StartPage.harjutuseValik);
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);
 		});

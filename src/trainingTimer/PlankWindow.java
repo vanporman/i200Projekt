@@ -71,12 +71,9 @@ public class PlankWindow {
 		
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
-			
 			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr2.getText()));
 			Countdown.aegStardini = Integer.parseInt(countdownFormatHr2.getText());
-			
 			System.out.println("START");
-			
 			Countdown countdownToStart = new Countdown();
 			countdownToStart.alustaAllalugemist();
 		});
@@ -86,20 +83,18 @@ public class PlankWindow {
 			
 			Countdown stop2 = new Countdown();
 			stop2.alustaAllalugemist();
-			
 			Stopper stop = new Stopper();
 			stop.startStopper();
-			
 			System.out.println("STOPP KLIKK PLANK VAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 0;
-			
 			System.out.println("RESET KLIKK PLANK VAATES");
 		});
 		
 		backButtonHr2.setOnAction(event ->{
+			StartPage.harjutuseValik = 0;
+//			System.out.println("harjutseValik: " + StartPage.harjutuseValik);
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);
 		});
