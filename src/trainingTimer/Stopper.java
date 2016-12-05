@@ -4,9 +4,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Stopper {
-	private int hour;
-	private int minute;
-	private int second;
+//	Integer hour = 0;
+//	Integer minute = 0;
+//	Integer second = 0;
 	
 	private Timer stopperiTimer = new Timer();
 	
@@ -16,18 +16,21 @@ public class Stopper {
 				if (StartPage.taimeriOlek == 1){
 					stopperiTimer.cancel();						
 				} else {					
-					if(second < 59){ //59
-						second++;
-						System.out.println("Seconds passed: " + second);
+					if(StartPage.second < 59){ //59
+						StartPage.second++;
+						StartPage.sec = (StartPage.second < 10 ? "0" : "") + StartPage.second;
+						System.out.println("Seconds passed: " + StartPage.second);
 					} else {
-						second = 0;
-						if (minute < 59){ //59
-							minute++;
-							System.out.println("Minutes passed: " + minute);
+						StartPage.second = 0;
+						if (StartPage.minute < 59){ //59
+							StartPage.minute++;
+							StartPage.min = (StartPage.minute < 10 ? "0" : "") + StartPage.minute;
+							System.out.println("Minutes passed: " + StartPage.minute);
 						} else {
-							minute = 0;
-							hour++;
-							System.out.println("Hours passed: " + hour);
+							StartPage.minute = 0;
+							StartPage.hour++;
+							StartPage.h = (StartPage.hour < 10 ? "0" : "") + StartPage.hour;
+							System.out.println("Hours passed: " + StartPage.hour);
 						}
 					}
 				}

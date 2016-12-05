@@ -1,5 +1,8 @@
 package trainingTimer;
 
+import java.text.SimpleDateFormat;
+
+import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -15,6 +18,13 @@ public class StartPage {
 	Stage laud;
 	public static int taimeriOlek = 0; // 0-jookseb, 1-seisab
 	public static int harjutuseValik = 0; // 1-wall sit, 2-plank, 3-side plank
+	
+	static Integer hour = 0; // Stopperi tunnid
+	static String h = "00"; // Tundide formaat
+	static Integer minute = 0; // Stoppri minutid
+	static String min = "00"; // Minutite formaat
+	static Integer second = 0; // Stopperi sekundid
+	static String sec = "00"; // Sekundite formaat
 	
 	public StartPage(Stage avaLaud){ //<-- konstruktor (kui nimi on sama klassiga)
 		avaLaud.setScene(avaScene); //<-- sceneile andsime stage kaasa
@@ -47,7 +57,7 @@ public class StartPage {
 		harjutus3.setPrefWidth(75);
 		GridPane.setConstraints(harjutus3, 3, 2);
 		
-		Label stopperFormat = new Label("00:00:00");
+		Label stopperFormat = new Label();
 		stopperFormat.setId("stoppwatch-style");
 		GridPane.setHalignment(stopperFormat, HPos.CENTER);
 		GridPane.setConstraints(stopperFormat, 1, 4, 3, 1);
@@ -72,8 +82,15 @@ public class StartPage {
 		
 		avaGrid.getChildren().addAll(pealkiri, harjutus1, harjutus2, harjutus3, stopperFormat, startBtn, stopBtn, resetBtn, closeApp);
 		
+		new AnimationTimer(){
+			@Override
+			public void handle(long now){
+				stopperFormat.setText(h+":"+min+":"+sec);
+			}
+		}.start();
+		
 		/*
-		 * Nupud - lähevad uude klassi
+		 * Nupud
 		 * -----
 		 * Harjutus 1
 		 */
@@ -125,9 +142,15 @@ public class StartPage {
 		 * Avavaate RESET NUPP
 		 */
 		resetBtn.setOnAction(event ->{
+			if (taimeriOlek == 1){
+				hour = 0; // Resetitud stopperi tunnid
+				h = "00"; // Resetitud tundide formaat
+				minute = 0; // Resetitud stoppri minutid
+				min = "00"; // Resetitud minutite formaat
+				second = 0; // Resetitud stopperi sekundid
+				sec = "00"; // Resetitud sekundite formaat
+			}
 			System.out.println("RESET KLIKK AVAVAATES");
-			System.out.println("harjutseValik: " + harjutuseValik);
-			//RESETIB numbrid nulliks
 		});
 		/*
 		 * SULGEB RAKENDUSE
