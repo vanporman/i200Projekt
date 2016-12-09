@@ -103,20 +103,20 @@ public class StartPage {
 		/*
 		 * Harjutus 2
 		 */
-		harjutus2.setOnAction(event ->{
-			harjutuseValik = 2;
-			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
-			new Excercise2Window(laud);
-		});
-		
-		/*
-		 * Harjutus 3
-		 */
-		harjutus3.setOnAction(event ->{
-			harjutuseValik = 3;
-			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
-			new Excercise3Window(laud);
-		});
+//		harjutus2.setOnAction(event ->{
+//			harjutuseValik = 2;
+//			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
+//			new Excercise2Window(laud);
+//		});
+//		
+//		/*
+//		 * Harjutus 3
+//		 */
+//		harjutus3.setOnAction(event ->{
+//			harjutuseValik = 3;
+//			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
+//			new Excercise3Window(laud);
+//		});
 		
 		/*
 		 * Avavaate START nupp

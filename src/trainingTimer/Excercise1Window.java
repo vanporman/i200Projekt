@@ -81,7 +81,7 @@ public class Excercise1Window{
 		new AnimationTimer(){
 			@Override
 			public void handle(long now){
-				stopperFormat.setText(h+":"+(Excercise1Window.minute < 10 ? "0" : "") + Excercise1Window.minute+":"+(Excercise1Window.second < 10 ? "0" : "") + Excercise1Window.second);
+				stopperFormat.setText(h + ":" + (minute < 10 ? "0" : "") + minute + ":" + (second < 10 ? "0" : "") + second);
 			}
 		}.start();
 		

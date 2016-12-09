@@ -1,5 +1,6 @@
 package trainingTimer;
 
+import javafx.animation.AnimationTimer;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -15,6 +16,11 @@ public class Excercise3Window {
 	private GridPane gridHr3 = new GridPane();
 	private Scene sceneHr3 = new Scene(gridHr3, 235, 300);
 	Stage avaLaud;
+	
+	static Integer hour = 0; // Stopperi tunnid
+	static String h = "00"; // Tundide formaat
+	static Integer minute = 0; // Stoppri minutid
+	static Integer second = 0; // Stopperi sekundid
 	
 	public Excercise3Window(Stage avaLaud){
 		avaLaud.setScene(sceneHr3);
@@ -44,7 +50,7 @@ public class Excercise3Window {
 		countdownFormatHr3.setPrefWidth(85);
 		GridPane.setConstraints(countdownFormatHr3, 3, 2, 1, 1);
 		
-		Label stopperFormat = new Label("00:00:00");
+		Label stopperFormat = new Label();
 		stopperFormat.setId("stoppwatch-style");
 		GridPane.setHalignment(stopperFormat, HPos.CENTER);
 		GridPane.setConstraints(stopperFormat, 1, 3, 3, 1);
@@ -69,11 +75,20 @@ public class Excercise3Window {
 		
 		gridHr3.getChildren().addAll(pealkiri, setCountdownHr3, countdownFormatHr3, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr3);
 		
+		new AnimationTimer(){
+			@Override
+			public void handle(long now){
+				stopperFormat.setText(h + ":" + (minute < 10 ? "0" : "") + minute + ":" + (second < 10 ? "0" : "") + second);
+			}
+		}.start();
+		
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
-			System.out.println("Kasutaja sisestas: " + Integer.parseInt(countdownFormatHr3.getText()));
-//			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr3.getText());
+			
 			System.out.println("START");
+//			System.out.println("Kasutaja sisestas: " + Integer.parseInt(countdownFormatHr3.getText()));
+			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr3.getText());
+			second = CountdownTimer.aegStardini;
 			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
 		});
@@ -81,14 +96,19 @@ public class Excercise3Window {
 		stopBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 1;
 			
-			CountdownTimer stop2 = new CountdownTimer();
-			stop2.alustaAllalugemist();
 			Stopper stop = new Stopper();
 			stop.startStopper();
+			CountdownTimer stop2 = new CountdownTimer();
+			stop2.alustaAllalugemist();
 			System.out.println("STOPP KLIKK AVAVAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 1;
+			hour = 0;
+			h = "00";
+			minute = 0;
+			second = 0;
 			System.out.println("RESET KLIKK WALL SIT VAATES");
 		});
 		

@@ -14,15 +14,23 @@ public class Ex1And2Timer {
 			public void run(){
 				if (StartPage.taimeriOlek == 1){ // Peatab taimeri kui vajutada stopp nuppu
 					myTimer.cancel();
-				} else if (Excercise1Window.minute == 1 ){ // Peatab taimeri kui aeg on t2is
+					/*
+					 * MUUTUJAD PEAVAD OLEMA
+					 * Excercise1Window.second
+					 * Excercise1Window.minute
+					 * Excercise2Window.second
+					 * Excercise2Window.minute
+					 */
+				} else if (Excercise1Window.minute == 1 && Excercise1Window.second == 5){ // Peatab taimeri kui aeg on t2is
 					myTimer.cancel();
 				} else {					
 					if(Excercise1Window.second < 59){ //59
 						Excercise1Window.second++;
 						if (Excercise1Window.second >= 55 && Excercise1Window.second <= 59){
 							System.out.println(Excercise1Window.second + " BEEEP!");
+						} else {
+							System.out.println("Seconds passed: " + Excercise1Window.second);							
 						}
-						System.out.println("Seconds passed: " + Excercise1Window.second);
 					} else {
 						Excercise1Window.second = 0;
 						if (Excercise1Window.minute < 59){ //59

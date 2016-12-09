@@ -80,7 +80,7 @@ public class Excercise2Window {
 		new AnimationTimer(){
 			@Override
 			public void handle(long now){
-				stopperFormat.setText(h + ":" + (Excercise2Window.minute < 10 ? "0" : "") + Excercise2Window.minute + ":" + (Excercise2Window.second < 10 ? "0" : ""));
+				stopperFormat.setText(h + ":" + (minute < 10 ? "0" : "") + minute + ":" + (second < 10 ? "0" : "") + second);
 			}
 		}.start();
 		
