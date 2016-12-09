@@ -1,5 +1,6 @@
 package trainingTimer;
 
+import javafx.animation.AnimationTimer;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -9,14 +10,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class PlankWindow {
+public class Excercise2Window {
 	
 	private GridPane gridHr2 = new GridPane();
 	private Scene sceneHr2 = new Scene(gridHr2, 235, 300);
 	Stage avaLaud;
 //	private static int aegStardini;
 	
-	public PlankWindow(Stage avaLaud){
+	static Integer hour = 0; // Stopperi tunnid
+	static String h = "00"; // Tundide formaat
+	static Integer minute = 0; // Stoppri minutid
+//	static String min = "00"; // Minutite formaat
+	static Integer second = 0; // Stopperi sekundid
+//	static String sec = "00"; // Sekundite formaat
+	
+	public Excercise2Window(Stage avaLaud){
 		avaLaud.setScene(sceneHr2);
 		startHr2(avaLaud);
 	}
@@ -44,7 +52,7 @@ public class PlankWindow {
 		countdownFormatHr2.setPrefWidth(85);
 		GridPane.setConstraints(countdownFormatHr2, 3, 2, 1, 1);
 		
-		Label stopperFormat = new Label("00:00:00");
+		Label stopperFormat = new Label();
 		stopperFormat.setId("stoppwatch-style");
 		GridPane.setHalignment(stopperFormat, HPos.CENTER);
 		GridPane.setConstraints(stopperFormat, 1, 3, 3, 1);
@@ -69,26 +77,39 @@ public class PlankWindow {
 		
 		gridHr2.getChildren().addAll(pealkiri, setCountdownHr2, countdownFormatHr2, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr2);
 		
+		new AnimationTimer(){
+			@Override
+			public void handle(long now){
+				stopperFormat.setText(h + ":" + (Excercise2Window.minute < 10 ? "0" : "") + Excercise2Window.minute + ":" + (Excercise2Window.second < 10 ? "0" : ""));
+			}
+		}.start();
+		
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
-			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr2.getText()));
-			Countdown.aegStardini = Integer.parseInt(countdownFormatHr2.getText());
 			System.out.println("START");
-			Countdown countdownToStart = new Countdown();
+//			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr2.getText()));
+			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr2.getText());
+			second = CountdownTimer.aegStardini;
+			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
 		});
 		
 		stopBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 1;
 			
-			Countdown stop2 = new Countdown();
-			stop2.alustaAllalugemist();
-			Stopper stop = new Stopper();
-			stop.startStopper();
+			Ex1And2Timer stop = new Ex1And2Timer();
+			stop.startTimerHr();
+//			CountdownTimer stop2 = new CountdownTimer();
+//			stop2.alustaAllalugemist();
 			System.out.println("STOPP KLIKK PLANK VAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 1;
+			hour = 0;
+			h = "00";
+			minute = 0;
+			second = 0;
 			System.out.println("RESET KLIKK PLANK VAATES");
 		});
 		

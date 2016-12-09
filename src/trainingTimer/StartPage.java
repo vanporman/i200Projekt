@@ -97,7 +97,7 @@ public class StartPage {
 		harjutus1.setOnAction(event ->{
 			harjutuseValik = 1;
 			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
-			new WallSitWindow(laud);
+			new Excercise1Window(laud);
 		});
 		
 		/*
@@ -106,7 +106,7 @@ public class StartPage {
 		harjutus2.setOnAction(event ->{
 			harjutuseValik = 2;
 			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
-			new PlankWindow(laud);
+			new Excercise2Window(laud);
 		});
 		
 		/*
@@ -115,7 +115,7 @@ public class StartPage {
 		harjutus3.setOnAction(event ->{
 			harjutuseValik = 3;
 			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
-			new SidePlankWindow(laud);
+			new Excercise3Window(laud);
 		});
 		
 		/*

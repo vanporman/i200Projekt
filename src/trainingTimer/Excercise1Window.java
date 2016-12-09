@@ -1,5 +1,6 @@
 package trainingTimer;
 
+import javafx.animation.AnimationTimer;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -7,16 +8,24 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class WallSitWindow{
+public class Excercise1Window{
 	
 //	public static int aegStardini;
 	private GridPane gridHr1 = new GridPane();
 	private Scene sceneHr1 = new Scene(gridHr1, 235, 300);
 	Stage avaLaud;
 	
-	public WallSitWindow(Stage avaLaud){
+	static Integer hour = 0; // Stopperi tunnid
+	static String h = "00"; // Tundide formaat
+	static Integer minute = 0; // Stoppri minutid
+//	static String min = "00"; // Minutite formaat
+	static Integer second = 0; // Stopperi sekundid
+//	static String sec = "00"; // Sekundite formaat
+	
+	public Excercise1Window(Stage avaLaud){
 		avaLaud.setScene(sceneHr1);
 		startHr1(avaLaud);
 	}
@@ -44,7 +53,7 @@ public class WallSitWindow{
 		countdownFormatHr1.setPrefWidth(85);
 		GridPane.setConstraints(countdownFormatHr1, 3, 2, 1, 1);
 		
-		Label stopperFormat = new Label("00:00:00");
+		Label stopperFormat = new Label();
 		stopperFormat.setId("stoppwatch-style");
 		GridPane.setHalignment(stopperFormat, HPos.CENTER);
 		GridPane.setConstraints(stopperFormat, 1, 3, 3, 1);
@@ -69,32 +78,44 @@ public class WallSitWindow{
 		
 		gridHr1.getChildren().addAll(pealkiri, setCountdownHr1, countdownFormatHr1, stopperFormat, startBtn, stopBtn, resetBtn, backButtonHr1);
 		
+		new AnimationTimer(){
+			@Override
+			public void handle(long now){
+				stopperFormat.setText(h+":"+(Excercise1Window.minute < 10 ? "0" : "") + Excercise1Window.minute+":"+(Excercise1Window.second < 10 ? "0" : "") + Excercise1Window.second);
+			}
+		}.start();
+		
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
-			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr1.getText()));
-			Countdown.aegStardini = Integer.parseInt(countdownFormatHr1.getText());
+			// SIIN tuleb 2ra m22rata, et kui stop nupp on vajutatud, siis uuesti starti vajutades ei algaks allalugemine
 			System.out.println("START");
-			Countdown countdownToStart = new Countdown();
+			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr1.getText());
+			second = CountdownTimer.aegStardini;
+			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
 		});
 		
 		stopBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 1;
 			
-			Stopper stop = new Stopper();
-			stop.startStopper();
-			Countdown stop2 = new Countdown();
-			stop2.alustaAllalugemist();
+			Ex1And2Timer stop = new Ex1And2Timer();
+			stop.startTimerHr();
+//			CountdownTimer stop2 = new CountdownTimer();
+//			stop2.alustaAllalugemist();
 			System.out.println("STOPP KLIKK WALL SIT VAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
+			StartPage.taimeriOlek = 1;
+			hour = 0; // Resetitud stopperi tunnid
+			h = "00"; // Resetitud tundide formaat
+			minute = 0; // Resetitud stoppri minutid
+			second = 0; // Resetitud stopperi sekundid
 			System.out.println("RESET KLIKK WALL SIT VAATES");
 		});
 		
 		backButtonHr1.setOnAction(event ->{
 			StartPage.harjutuseValik = 0;
-//			System.out.println("harjutseValik: " + StartPage.harjutuseValik);
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);
 		});

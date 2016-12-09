@@ -9,14 +9,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class SidePlankWindow {
+public class Excercise3Window {
 	
 //	public static int aegStardini;
 	private GridPane gridHr3 = new GridPane();
 	private Scene sceneHr3 = new Scene(gridHr3, 235, 300);
 	Stage avaLaud;
 	
-	public SidePlankWindow(Stage avaLaud){
+	public Excercise3Window(Stage avaLaud){
 		avaLaud.setScene(sceneHr3);
 		startHr3(avaLaud);
 	}
@@ -72,16 +72,16 @@ public class SidePlankWindow {
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
 			System.out.println("Kasutaja sisestas: " + Integer.parseInt(countdownFormatHr3.getText()));
-			Countdown.aegStardini = Integer.parseInt(countdownFormatHr3.getText());
+//			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr3.getText());
 			System.out.println("START");
-			Countdown countdownToStart = new Countdown();
+			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
 		});
 		
 		stopBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 1;
 			
-			Countdown stop2 = new Countdown();
+			CountdownTimer stop2 = new CountdownTimer();
 			stop2.alustaAllalugemist();
 			Stopper stop = new Stopper();
 			stop.startStopper();
