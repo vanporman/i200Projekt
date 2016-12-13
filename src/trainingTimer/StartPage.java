@@ -18,6 +18,7 @@ public class StartPage {
 	Stage laud;
 	public static int taimeriOlek = 0; // 0-jookseb, 1-seisab
 	public static int harjutuseValik = 0; // 1-wall sit, 2-plank, 3-side plank
+	public static String harjutus;
 	
 	static Integer hour = 0; // Stopperi tunnid
 	static String h = "00"; // Tundide formaat
@@ -96,6 +97,7 @@ public class StartPage {
 		 */
 		harjutus1.setOnAction(event ->{
 			harjutuseValik = 1;
+			harjutus = Integer.toString(harjutuseValik);
 			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
 			new Excercise1Window(laud);
 		});
@@ -103,11 +105,12 @@ public class StartPage {
 		/*
 		 * Harjutus 2
 		 */
-//		harjutus2.setOnAction(event ->{
-//			harjutuseValik = 2;
-//			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
-//			new Excercise2Window(laud);
-//		});
+		harjutus2.setOnAction(event ->{
+			harjutuseValik = 2;
+			harjutus = Integer.toString(harjutuseValik);
+			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
+			new Excercise2Window(laud);
+		});
 //		
 //		/*
 //		 * Harjutus 3

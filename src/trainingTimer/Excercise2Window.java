@@ -115,6 +115,8 @@ public class Excercise2Window {
 		
 		backButtonHr2.setOnAction(event ->{
 			StartPage.harjutuseValik = 0;
+			StartPage.taimeriOlek = 0;
+			CountdownTimer.harjutus = 0;
 //			System.out.println("harjutseValik: " + StartPage.harjutuseValik);
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);

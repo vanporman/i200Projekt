@@ -23,7 +23,7 @@ public class Excercise1Window{
 	static Integer minute = 0; // Stoppri minutid
 //	static String min = "00"; // Minutite formaat
 	static Integer second = 0; // Stopperi sekundid
-//	static String sec = "00"; // Sekundite formaat
+	static String sec; // Sekundite formaat
 	
 	public Excercise1Window(Stage avaLaud){
 		avaLaud.setScene(sceneHr1);
@@ -87,10 +87,10 @@ public class Excercise1Window{
 		
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 0;
-			// SIIN tuleb 2ra m22rata, et kui stop nupp on vajutatud, siis uuesti starti vajutades ei algaks allalugemine
 			System.out.println("START");
 			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr1.getText());
 			second = CountdownTimer.aegStardini;
+			sec = "second";
 			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
 		});
