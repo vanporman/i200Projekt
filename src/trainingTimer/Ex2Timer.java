@@ -38,7 +38,7 @@ public class Ex2Timer {
 						Excercise2Window.second++;
 						System.out.println(Excercise2Window.second + " BEEEP!");
 						CountdownTimer.PlaySound(Beep);
-						if (Excercise2Window.second == 0){
+						if (Excercise2Window.minute == 4){
 							CountdownTimer.PlaySound(Beep2);
 						}
 					} else if (Excercise2Window.minute == 5 && Excercise2Window.second >= 24 && Excercise2Window.second <= 29){

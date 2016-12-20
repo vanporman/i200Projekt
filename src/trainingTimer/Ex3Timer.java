@@ -17,15 +17,42 @@ public class Ex3Timer {
 					myTimer.cancel();
 				} else if (Excercise3Window.minute == 3 && Excercise3Window.second == 30){
 					myTimer.cancel();
-				} else if (Excercise3Window.minute == 1 && Excercise3Window.second >= 9 && Excercise3Window.second <= 14){
+				} else if (Excercise3Window.second > 24 && Excercise3Window.second < 29){
 					Excercise3Window.second++;
 					System.out.println(Excercise3Window.second + " BEEEP!");
 					CountdownTimer.PlaySound(Beep);
-					if (Excercise3Window.second == 15){
+					if (Excercise3Window.second == 30){
 						CountdownTimer.PlaySound(Beep2);
 					}
-				}
-				else {
+				} else if (Excercise3Window.minute == 1 && Excercise3Window.second > 24 && Excercise3Window.second < 29){
+					Excercise3Window.second++;
+					System.out.println(Excercise3Window.second + " BEEEP!");
+					CountdownTimer.PlaySound(Beep);
+					if (Excercise3Window.second == 30){
+						CountdownTimer.PlaySound(Beep2);
+					}
+				} else if (Excercise3Window.minute == 1 && Excercise3Window.second >= 54 && Excercise3Window.second <= 59){
+					Excercise3Window.second++;
+					System.out.println(Excercise3Window.second + " BEEEP!");
+					CountdownTimer.PlaySound(Beep);
+					if (Excercise3Window.minute == 2){
+						CountdownTimer.PlaySound(Beep2);
+					}
+				} else if (Excercise3Window.minute == 2 && Excercise3Window.second >= 54 && Excercise3Window.second <= 59){
+					Excercise3Window.second++;
+					System.out.println(Excercise3Window.second + " BEEEP!");
+					CountdownTimer.PlaySound(Beep);
+					if (Excercise3Window.minute == 3){
+						CountdownTimer.PlaySound(Beep2);
+					}
+				} else if (Excercise3Window.minute == 3 && Excercise3Window.second >= 24 && Excercise3Window.second <= 29){
+					Excercise3Window.second++;
+					System.out.println(Excercise3Window.second + " BEEEP!");
+					CountdownTimer.PlaySound(Beep);
+					if (Excercise3Window.second == 30){
+						CountdownTimer.PlaySound(Beep2);
+					}
+				} else {
 					if (Excercise3Window.second < 59){
 						Excercise3Window.second++;
 						System.out.println("Seconds passed: " + Excercise3Window.second);
