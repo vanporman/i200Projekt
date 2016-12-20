@@ -1,7 +1,5 @@
 package trainingTimer;
 
-import java.text.SimpleDateFormat;
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.geometry.HPos;
@@ -16,9 +14,9 @@ public class StartPage {
 	private GridPane avaGrid = new GridPane();
 	private Scene avaScene = new Scene(avaGrid, 235, 300);
 	Stage laud;
-	public static int taimeriOlek = 0; // 0-jookseb, 1-seisab
+	public static int taimeriOlek = 0; // 1-jookseb, 2-seisab
 	public static int harjutuseValik = 0; // 1-wall sit, 2-plank, 3-side plank
-	public static String harjutus;
+//	public static String harjutus;
 	
 	static Integer hour = 0; // Stopperi tunnid
 	static String h = "00"; // Tundide formaat
@@ -97,7 +95,7 @@ public class StartPage {
 		 */
 		harjutus1.setOnAction(event ->{
 			harjutuseValik = 1;
-			harjutus = Integer.toString(harjutuseValik);
+//			harjutus = Integer.toString(harjutuseValik);
 			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
 			new Excercise1Window(laud);
 		});
@@ -107,19 +105,19 @@ public class StartPage {
 		 */
 		harjutus2.setOnAction(event ->{
 			harjutuseValik = 2;
-			harjutus = Integer.toString(harjutuseValik);
+//			harjutus = Integer.toString(harjutuseValik);
 			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
 			new Excercise2Window(laud);
 		});
-//		
-//		/*
-//		 * Harjutus 3
-//		 */
-//		harjutus3.setOnAction(event ->{
-//			harjutuseValik = 3;
-//			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
-//			new Excercise3Window(laud);
-//		});
+		
+		/*
+		 * Harjutus 3
+		 */
+		harjutus3.setOnAction(event ->{
+			harjutuseValik = 3;
+			System.out.println("KLIKK HARJUTUS " + harjutuseValik);
+			new Excercise3Window(laud);
+		});
 		
 		/*
 		 * Avavaate START nupp

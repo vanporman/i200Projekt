@@ -4,9 +4,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Stopper {
-//	Integer hour = 0;
-//	Integer minute = 0;
-//	Integer second = 0;
 	
 	private Timer stopperiTimer = new Timer();
 	

@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Excercise1Window{
@@ -86,7 +85,7 @@ public class Excercise1Window{
 		}.start();
 		
 		startBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 0;
+			StartPage.taimeriOlek = 1;
 			System.out.println("START");
 			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr1.getText());
 			second = CountdownTimer.aegStardini;
@@ -96,17 +95,17 @@ public class Excercise1Window{
 		});
 		
 		stopBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 1;
-			
-			Ex1And2Timer stop = new Ex1And2Timer();
-			stop.startTimerHr();
+			StartPage.taimeriOlek = 2;
+			//Kui taimer k2ib ja stopp nuppu vajutada, siis taimer läheb pausile aga uuesti starti vajutades algab ka countdown uuesti pihta
+//			Ex1And2Timer stop = new Ex1And2Timer();
+//			stop.startTimerHr();
 //			CountdownTimer stop2 = new CountdownTimer();
 //			stop2.alustaAllalugemist();
 			System.out.println("STOPP KLIKK WALL SIT VAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 1;
+			StartPage.taimeriOlek = 2;
 			hour = 0; // Resetitud stopperi tunnid
 			h = "00"; // Resetitud tundide formaat
 			minute = 0; // Resetitud stoppri minutid

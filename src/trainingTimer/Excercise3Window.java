@@ -83,33 +83,35 @@ public class Excercise3Window {
 		}.start();
 		
 		startBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 0;
+			StartPage.taimeriOlek = 1;
 			
-			System.out.println("START");
-//			System.out.println("Kasutaja sisestas: " + Integer.parseInt(countdownFormatHr3.getText()));
+			System.out.println("START " + StartPage.harjutuseValik);
+			System.out.println("Kasutaja sisestas: " + Integer.parseInt(countdownFormatHr3.getText()));
 			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr3.getText());
 			second = CountdownTimer.aegStardini;
 			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
+//			Ex3Timer harjutus = new Ex3Timer();
+//			harjutus.startTimerHr3();
 		});
 		
 		stopBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 1;
+			StartPage.taimeriOlek = 2;
 			
-			Stopper stop = new Stopper();
-			stop.startStopper();
-			CountdownTimer stop2 = new CountdownTimer();
-			stop2.alustaAllalugemist();
-			System.out.println("STOPP KLIKK AVAVAATES");
+//			Stopper stop = new Stopper();
+//			stop.startStopper();
+//			CountdownTimer stop2 = new CountdownTimer();
+//			stop2.alustaAllalugemist();
+			System.out.println("STOPP KLIKK HARJUTUS 3");
 		});
 		
 		resetBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 1;
+			StartPage.taimeriOlek = 2;
 			hour = 0;
 			h = "00";
 			minute = 0;
 			second = 0;
-			System.out.println("RESET KLIKK WALL SIT VAATES");
+			System.out.println("RESET KLIKK SIDE PLANK VAATES");
 		});
 		
 		backButtonHr3.setOnAction(event ->{

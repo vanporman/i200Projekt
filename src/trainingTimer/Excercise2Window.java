@@ -85,7 +85,7 @@ public class Excercise2Window {
 		}.start();
 		
 		startBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 0;
+			StartPage.taimeriOlek = 1;
 			System.out.println("START");
 //			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr2.getText()));
 			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr2.getText());
@@ -95,17 +95,17 @@ public class Excercise2Window {
 		});
 		
 		stopBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 1;
+			StartPage.taimeriOlek = 2;
 			
-			Ex1And2Timer stop = new Ex1And2Timer();
-			stop.startTimerHr();
+//			Ex1And2Timer stop = new Ex1And2Timer();
+//			stop.startTimerHr();
 //			CountdownTimer stop2 = new CountdownTimer();
 //			stop2.alustaAllalugemist();
 			System.out.println("STOPP KLIKK PLANK VAATES");
 		});
 		
 		resetBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 1;
+			StartPage.taimeriOlek = 2;
 			hour = 0;
 			h = "00";
 			minute = 0;
@@ -116,7 +116,10 @@ public class Excercise2Window {
 		backButtonHr2.setOnAction(event ->{
 			StartPage.harjutuseValik = 0;
 			StartPage.taimeriOlek = 0;
-			CountdownTimer.harjutus = 0;
+//			CountdownTimer stop = new CountdownTimer();
+//			stop.allaLugemiseTimer.cancel();
+//			Ex1And2Timer stop2 = new Ex1And2Timer();
+//			stop2.myTimer.cancel();
 //			System.out.println("harjutseValik: " + StartPage.harjutuseValik);
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);
