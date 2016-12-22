@@ -109,12 +109,14 @@ public class Excercise1Window{
 			hour = 0; // Resetitud stopperi tunnid
 			h = "00"; // Resetitud tundide formaat
 			minute = 0; // Resetitud stoppri minutid
-			second = 0; // Resetitud stopperi sekundid
+			second = 0; // Resetitud stopperi sekundid;
+			countdownFormatHr1.clear();
 			System.out.println("RESET KLIKK WALL SIT VAATES");
 		});
 		
 		backButtonHr1.setOnAction(event ->{
 			StartPage.harjutuseValik = 0;
+//			System.out.println(Integer.parseInt(countdownFormatHr1.getText()));
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);
 		});

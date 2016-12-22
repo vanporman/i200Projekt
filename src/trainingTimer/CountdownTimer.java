@@ -32,7 +32,7 @@ public class CountdownTimer {
 				//harjutus 1 taimeri kood
 				if (harjutus == 1){
 					if (StartPage.taimeriOlek == 2){
-						allaLugemiseTimer.cancel();	
+						allaLugemiseTimer.cancel();
 					}
 					else {
 						if (Excercise1Window.second <= 6 && Excercise1Window.second >= 2){
@@ -42,11 +42,11 @@ public class CountdownTimer {
 						}
 						else if (Excercise1Window.second < 2){
 							Excercise1Window.second--;
-							System.out.println("STARTS" + Excercise1Window.second);
+							System.out.println("STARTS " + Excercise1Window.second);
 							if (Excercise1Window.second == 0){
 								System.out.println("Tegemist on WALL SIT harjutusega " + harjutus);
 								PlaySound(Beep2);
-								allaLugemiseTimer.cancel();
+								allaLugemiseTimer.cancel();System.gc();
 								Ex1Timer harjutus1 = new Ex1Timer();
 								harjutus1.startTimerHr();
 							}

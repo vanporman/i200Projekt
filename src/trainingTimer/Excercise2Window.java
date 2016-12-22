@@ -87,7 +87,6 @@ public class Excercise2Window {
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 1;
 			System.out.println("START");
-//			System.out.println("Kasutaja aeg: " + Integer.parseInt(countdownFormatHr2.getText()));
 			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr2.getText());
 			second = CountdownTimer.aegStardini;
 			CountdownTimer countdownToStart = new CountdownTimer();
@@ -110,6 +109,7 @@ public class Excercise2Window {
 			h = "00";
 			minute = 0;
 			second = 0;
+			countdownFormatHr2.clear();
 			System.out.println("RESET KLIKK PLANK VAATES");
 		});
 		
@@ -118,9 +118,6 @@ public class Excercise2Window {
 			StartPage.taimeriOlek = 0;
 //			CountdownTimer stop = new CountdownTimer();
 //			stop.allaLugemiseTimer.cancel();
-//			Ex1And2Timer stop2 = new Ex1And2Timer();
-//			stop2.myTimer.cancel();
-//			System.out.println("harjutseValik: " + StartPage.harjutuseValik);
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
 			new StartPage(avaLaud);
 		});

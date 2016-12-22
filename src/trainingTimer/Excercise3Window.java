@@ -111,6 +111,7 @@ public class Excercise3Window {
 			h = "00";
 			minute = 0;
 			second = 0;
+			countdownFormatHr3.clear();
 			System.out.println("RESET KLIKK SIDE PLANK VAATES");
 		});
 		
