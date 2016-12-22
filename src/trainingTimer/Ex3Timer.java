@@ -28,8 +28,6 @@ public class Ex3Timer {
 					CountdownTimer.PlaySound(Beep);
 				} else if (Excercise3Window.minute == 0 && Excercise3Window.second == 29
 						|| Excercise3Window.minute == 1 && Excercise3Window.second == 29
-//						|| Excercise3Window.minute == 1 && Excercise3Window.second == 58
-//						|| Excercise3Window.minute == 2 && Excercise3Window.second == 58
 						|| Excercise3Window.minute == 3 && Excercise3Window.second == 29){
 					Excercise3Window.second++;
 					System.out.println(Excercise3Window.second + " BEEEEEEP!");
