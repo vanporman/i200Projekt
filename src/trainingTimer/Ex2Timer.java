@@ -31,7 +31,7 @@ public class Ex2Timer {
 						CountdownTimer.PlaySound(Beep);
 					} else if (Excercise2Window.minute == 1 && Excercise2Window.second == 14
 							|| Excercise2Window.minute == 2 && Excercise2Window.second == 44
-//							|| Excercise2Window.minute == 3 && Excercise2Window.second == 58
+							//
 							|| Excercise2Window.minute == 5 && Excercise2Window.second == 29
 							|| Excercise2Window.minute == 6 && Excercise2Window.second >= 44){
 						Excercise2Window.second++;
