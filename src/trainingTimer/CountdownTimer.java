@@ -90,12 +90,13 @@ public class CountdownTimer {
 					if (StartPage.taimeriOlek == 2){
 						allaLugemiseTimer.cancel();	
 					}
-					if (Excercise3Window.second <= 6 && Excercise3Window.second >= 2){
-						Excercise3Window.second--;
-						PlaySound(Beep);
-						System.out.println("Beep " + Excercise3Window.second);
-					} else {
-						if (Excercise3Window.second < 2){
+					else {
+						if (Excercise3Window.second <= 6 && Excercise3Window.second >= 2){
+							Excercise3Window.second--;
+							PlaySound(Beep);
+							System.out.println("Beep " + Excercise3Window.second);
+						}
+						else if (Excercise3Window.second < 2){
 							Excercise3Window.second--;
 							System.out.println("STARTS");
 							if (Excercise3Window.second == 0){

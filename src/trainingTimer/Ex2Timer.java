@@ -19,42 +19,24 @@ public class Ex2Timer {
 					if (StartPage.taimeriOlek == 2){ // Peatab taimeri kui vajutada stopp nuppu
 						myTimer.cancel();
 					} else if (Excercise2Window.minute == 6 && Excercise2Window.second == 45){ // Peatab taimeri kui aeg on t2is
+						System.out.println("STOP");
 						myTimer.cancel();
-					} else if (Excercise2Window.minute == 1 && Excercise2Window.second > 9 && Excercise2Window.second < 14){
+					} else if (Excercise2Window.minute == 1 && Excercise2Window.second >= 9 && Excercise2Window.second <= 13
+							|| Excercise2Window.minute == 2 && Excercise2Window.second >= 39 && Excercise2Window.second <= 43
+							|| Excercise2Window.minute == 3 && Excercise2Window.second >= 54 && Excercise2Window.second <= 58
+							|| Excercise2Window.minute == 5 && Excercise2Window.second >= 24 && Excercise2Window.second <= 28
+							|| Excercise2Window.minute == 6 && Excercise2Window.second >= 39 && Excercise2Window.second <= 43){
 						Excercise2Window.second++;
 						System.out.println(Excercise2Window.second + " BEEEP!");
 						CountdownTimer.PlaySound(Beep);
-						if (Excercise2Window.second == 15){
-							CountdownTimer.PlaySound(Beep2);
-						}
-					} else if (Excercise2Window.minute == 2 && Excercise2Window.second > 39 && Excercise2Window.second < 44){
+					} else if (Excercise2Window.minute == 1 && Excercise2Window.second == 14
+							|| Excercise2Window.minute == 2 && Excercise2Window.second == 44
+//							|| Excercise2Window.minute == 3 && Excercise2Window.second == 58
+							|| Excercise2Window.minute == 5 && Excercise2Window.second == 29
+							|| Excercise2Window.minute == 6 && Excercise2Window.second >= 44){
 						Excercise2Window.second++;
-						System.out.println(Excercise2Window.second + " BEEEP!");
-						CountdownTimer.PlaySound(Beep);
-						if (Excercise2Window.second == 45){
-							CountdownTimer.PlaySound(Beep2);
-						}
-					} else if (Excercise2Window.minute == 3 && Excercise2Window.second > 54 && Excercise2Window.second < 59){
-						Excercise2Window.second++;
-						System.out.println(Excercise2Window.second + " BEEEP!");
-						CountdownTimer.PlaySound(Beep);
-						if (Excercise2Window.minute == 4){
-							CountdownTimer.PlaySound(Beep2);
-						}
-					} else if (Excercise2Window.minute == 5 && Excercise2Window.second > 24 && Excercise2Window.second < 29){
-						Excercise2Window.second++;
-						System.out.println(Excercise2Window.second + " BEEEP!");
-						CountdownTimer.PlaySound(Beep);
-						if (Excercise2Window.second == 30){
-							CountdownTimer.PlaySound(Beep2);
-						}
-					} else if (Excercise2Window.minute == 6 && Excercise2Window.second > 39 && Excercise2Window.second < 44){
-						Excercise2Window.second++;
-						System.out.println(Excercise2Window.second + " BEEEP!");
-						CountdownTimer.PlaySound(Beep);
-						if (Excercise2Window.second == 45){
-							CountdownTimer.PlaySound(Beep2);
-						}
+						System.out.println(Excercise2Window.second + " BEEEEEEP!");
+						CountdownTimer.PlaySound(Beep2);
 					} else {					
 						if(Excercise2Window.second < 59){ //59
 							Excercise2Window.second++;
@@ -64,8 +46,8 @@ public class Ex2Timer {
 							if (Excercise2Window.minute < 59){ //59
 								Excercise2Window.minute++;
 								System.out.println("Minutes passed: " + Excercise2Window.minute);
-								if (Excercise2Window.minute > 0){
-//									CountdownTimer.PlaySound(Beep2);
+								if (Excercise2Window.minute == 4){
+									CountdownTimer.PlaySound(Beep2);
 								}
 							}
 						}
