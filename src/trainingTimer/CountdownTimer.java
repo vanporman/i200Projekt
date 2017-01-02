@@ -1,5 +1,10 @@
 package trainingTimer;
 
+/*
+ * Countdown timer
+ * Enne igat harjutuse timerit alustab kasutaja maha lugemisest
+ */
+
 import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -38,11 +43,11 @@ public class CountdownTimer {
 								System.out.println("Tegemist on WALL SIT harjutusega " + harjutus);
 								PlaySound(Beep2);
 								allaLugemiseTimer.cancel();System.gc();
-								Ex1Timer harjutus1 = new Ex1Timer();
+								Ex1Timer harjutus1 = new Ex1Timer(); // harjutus 1 timer pannakse käima
 								harjutus1.startTimerHr();
 							}
 						}
-						else {
+						else {  // tavalised mahaloetud sekundid
 							Excercise1Window.second--;
 							System.out.println("Seconds to go: " + Excercise1Window.second);
 						}
