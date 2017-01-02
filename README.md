@@ -1,8 +1,8 @@
-Projekt <bold>TreeningTaimer</bold>
+Projekt: <b>TreeningTaimer</b>
 
 Autor: Andreas Porman
 
-Kirjeldus:</br>
+Kirjeldus:<br>
 Tegemist on stopperi ja taimer funktsiooni sisaldava rakendusega.
 Avalehel saab kasutada tavalist stopperi-funktsiooni sekundi täpsusega ja valida kolme harjutuse vahel.
 Igal harjutuse lehel saab valida harjutuse stardini jäävat aega. Kui aeg on valitud, hakkab taimer jooksma
