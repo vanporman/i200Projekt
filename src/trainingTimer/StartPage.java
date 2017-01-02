@@ -1,5 +1,9 @@
 package trainingTimer;
 
+/*
+ * Avaleht, siit saab jooksutada kas stopperit v6i valida yhe kolmest harjutusest
+ */
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.geometry.HPos;
@@ -14,7 +18,9 @@ public class StartPage {
 	private GridPane avaGrid = new GridPane();
 	private Scene avaScene = new Scene(avaGrid, 235, 300);
 	Stage laud;
+	// Vajalik taimeri jookstamiseks ja l6petamiseks
 	public static int taimeriOlek = 0; // 1-jookseb, 2-seisab
+	// Vajalik selleks, et õige allalugemise timer valitakse CountdownTimer klassist
 	public static int harjutuseValik = 0; // 1-wall sit, 2-plank, 3-side plank
 	
 	static Integer hour = 0; // Stopperi tunnid
@@ -24,12 +30,13 @@ public class StartPage {
 	static Integer second = 0; // Stopperi sekundid
 	static String sec = "00"; // Sekundite formaat
 	
-	public StartPage(Stage avaLaud){ //<-- konstruktor (kui nimi on sama klassiga)
-		avaLaud.setScene(avaScene); //<-- sceneile andsime stage kaasa
+	public StartPage(Stage avaLaud){ // konstruktor (kui nimi on sama klassiga)
+		avaLaud.setScene(avaScene); // sceneile on stage kaasa antud
 		laud = avaLaud;
-		startStage(); //<-- k2ivitasime stagei
+		startStage(); // k2ivitasin stage
 	}
 
+	//StartPage - avaleht
 	private void startStage() {
 		avaGrid.setPadding(new Insets(10, 5, 10, 5));
 		avaGrid.setHgap(5);

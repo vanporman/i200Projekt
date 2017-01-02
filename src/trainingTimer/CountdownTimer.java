@@ -15,15 +15,6 @@ public class CountdownTimer {
 	File Beep = new File("beep-07.wav");
 	File Beep2 = new File("beep-01a.wav");
 	
-	//Meetod mis valib switch-case p6hjal mis aknas harjutused liiguvad????
-	//Meetod 2 mis paneb käima taimeri vastavalt switch-case valikutele???
-	//Meetod siia sisse??????
-	/*MUUTUJAD PEAVAD OLEMA
-	 * Excercise1Window.second
-	 * Excercise2Window.second
-	 * Excercise3Window.second
-	 */
-	
 	Timer allaLugemiseTimer = new Timer();
 	
 	public void alustaAllalugemist(){	
@@ -35,7 +26,7 @@ public class CountdownTimer {
 						allaLugemiseTimer.cancel();
 					}
 					else {
-						if (Excercise1Window.second <= 6 && Excercise1Window.second >= 2){
+						if (Excercise1Window.second <= 6 && Excercise1Window.second >= 2){ // helisignaali m2ngimiseks
 							Excercise1Window.second--;
 							PlaySound(Beep);
 							System.out.println("Beep " + Excercise1Window.second);
@@ -43,7 +34,7 @@ public class CountdownTimer {
 						else if (Excercise1Window.second < 2){
 							Excercise1Window.second--;
 							System.out.println("STARTS " + Excercise1Window.second);
-							if (Excercise1Window.second == 0){
+							if (Excercise1Window.second == 0){ // stardisignaal ja mahalugemise taimer tyhistamine/l6petamine
 								System.out.println("Tegemist on WALL SIT harjutusega " + harjutus);
 								PlaySound(Beep2);
 								allaLugemiseTimer.cancel();System.gc();
@@ -129,41 +120,3 @@ public class CountdownTimer {
 		}
 	}
 }
-
-//if (StartPage.taimeriOlek == 1){
-//	allaLugemiseTimer.cancel();
-//} else {
-//	if (Excercise1Window.second < 2){
-//		Excercise1Window.second--;
-//		System.out.println("STARTS" + Excercise1Window.second);
-//		if (harjutus == 1 && Excercise1Window.second == 0){
-//			System.out.println("Tegemist on WALL SIT harjutusega " + harjutus);
-//			allaLugemiseTimer.cancel();
-//			Ex1And2Timer harjutus1 = new Ex1And2Timer();
-//			harjutus1.startTimerHr();
-////	if (muutuja < 2){
-////		muutuja--;
-////		System.out.println("STARTS");
-////		if (harjutus == 1 && muutuja == 0){
-////			System.out.println("Tegemist on WALL SIT harjutusega " + harjutus);
-////			allaLugemiseTimer.cancel();
-////			Ex1And2Timer harjutus1 = new Ex1And2Timer();
-////			harjutus1.startTimerHr();
-////		} else if (harjutus == 2 && Excercise2Window.second == 0){
-////			System.out.println("Tegemist on PLANK harjutusega " + harjutus);
-////			allaLugemiseTimer.cancel();
-////			Ex1And2Timer harjutus2 = new Ex1And2Timer();
-////			harjutus2.startTimerHr();
-////		} else if (harjutus == 3 && Excercise1Window.second == 0){
-////			System.out.println("Tegemist on SIDE PLANK harjutusega " + harjutus);
-////			allaLugemiseTimer.cancel();
-////			Ex3Timer harjutus3 = new Ex3Timer();
-////			harjutus3.startTimerHr2();
-//		}
-//	} else {
-//		Excercise1Window.second--;
-//		System.out.println("Seconds to go: " + Excercise1Window.second);
-////		muutuja--;
-////		System.out.println("Seconds to go: " + muutuja);
-//	}
-//}

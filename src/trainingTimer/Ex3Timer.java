@@ -12,21 +12,20 @@ public class Ex3Timer {
 	
 	public void startTimerHr3(){		
 		myTimer.scheduleAtFixedRate(new TimerTask(){
-			public void run(){
-//				if (CountdownTimer.harjutus == 3){					
+			public void run(){				
 				if (StartPage.taimeriOlek == 2){
 					myTimer.cancel();
 				} else if (Excercise3Window.minute == 3 && Excercise3Window.second == 30){
 					myTimer.cancel();
-				} else if (Excercise3Window.minute == 0 && Excercise3Window.second >= 24 && Excercise3Window.second <= 28
-						|| Excercise3Window.minute == 1 && Excercise3Window.second >= 24 && Excercise3Window.second <= 28
+				} else if (Excercise3Window.minute == 0 && Excercise3Window.second >= 24 && Excercise3Window.second <= 28 // lyhikese signaali
+						|| Excercise3Window.minute == 1 && Excercise3Window.second >= 24 && Excercise3Window.second <= 28 // vahemikud
 						|| Excercise3Window.minute == 1 && Excercise3Window.second >= 54 && Excercise3Window.second <= 58
 						|| Excercise3Window.minute == 2 && Excercise3Window.second >= 54 && Excercise3Window.second <= 58
 						|| Excercise3Window.minute == 3 && Excercise3Window.second >= 24 && Excercise3Window.second <= 28){
 					Excercise3Window.second++;
 					System.out.println(Excercise3Window.second + " BEEEP!");
 					CountdownTimer.PlaySound(Beep);
-				} else if (Excercise3Window.minute == 0 && Excercise3Window.second == 29
+				} else if (Excercise3Window.minute == 0 && Excercise3Window.second == 29 // pika signaali vahemikud
 						|| Excercise3Window.minute == 1 && Excercise3Window.second == 29
 						|| Excercise3Window.minute == 3 && Excercise3Window.second == 29){
 					Excercise3Window.second++;
@@ -48,7 +47,6 @@ public class Ex3Timer {
 					}
 				}
 			}
-//			}
 		}, 1000, 1000);
 	}
 }

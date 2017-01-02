@@ -10,7 +10,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		Stage avaLaud = new Stage();
-		new StartPage(avaLaud); //<-- l6ime uue objekti starPage klassist ja andsin stagei kaasa
+		new StartPage(avaLaud); //uus objekt startPage klassist millele on stage kaasa antud
 		avaLaud.show();
 		
 	}

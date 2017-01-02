@@ -18,14 +18,7 @@ public class Ex1Timer {
 				if (CountdownTimer.harjutus == 1){
 					if (StartPage.taimeriOlek == 2){ // Peatab taimeri kui vajutada stopp nuppu
 						myTimer.cancel();
-						/*
-						 * MUUTUJAD PEAVAD OLEMA
-						 * Excercise1Window.second
-						 * Excercise1Window.minute
-						 * Excercise2Window.second
-						 * Excercise2Window.minute
-						 */
-					} else if (Excercise1Window.minute == 5 /*&& Excercise1Window.second == 5*/){ // Peatab taimeri kui aeg on t2is
+					} else if (Excercise1Window.minute == 5){ // Peatab taimeri kui aeg on t2is
 						myTimer.cancel();
 					} else {					
 						if(Excercise1Window.second < 59){ //59

@@ -87,16 +87,17 @@ public class Excercise1Window{
 		startBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 1;
 			System.out.println("START");
-			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr1.getText());
+			CountdownTimer.aegStardini = Integer.parseInt(countdownFormatHr1.getText()); //Tekstist saab number (int)
 			second = CountdownTimer.aegStardini;
-			sec = "second";
+			//Start nupp, kutsutakse CountdownTimer esile
 			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
 		});
 		
 		stopBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 2;
-			//Kui taimer k2ib ja stopp nuppu vajutada, siis taimer läheb pausile aga uuesti starti vajutades algab ka countdown uuesti pihta
+			// Kui taimer k2ib ja stopp nuppu vajutada, siis taimer läheb pausile aga uuesti starti vajutades algab ka countdown uuesti pihta
+			// V2lja kommenteeritud, et seda viga ei juhtuks
 //			Ex1And2Timer stop = new Ex1And2Timer();
 //			stop.startTimerHr();
 //			CountdownTimer stop2 = new CountdownTimer();
@@ -105,12 +106,12 @@ public class Excercise1Window{
 		});
 		
 		resetBtn.setOnAction(event ->{
-			StartPage.taimeriOlek = 2;
+			StartPage.taimeriOlek = 2; // Ex1Timer taimer peatatakse
 			hour = 0; // Resetitud stopperi tunnid
 			h = "00"; // Resetitud tundide formaat
 			minute = 0; // Resetitud stoppri minutid
 			second = 0; // Resetitud stopperi sekundid;
-			countdownFormatHr1.clear();
+			countdownFormatHr1.clear(); // Kasutaja sisestatud aeg tyhistatakse
 			System.out.println("RESET KLIKK WALL SIT VAATES");
 		});
 		

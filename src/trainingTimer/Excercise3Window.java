@@ -91,8 +91,6 @@ public class Excercise3Window {
 			second = CountdownTimer.aegStardini;
 			CountdownTimer countdownToStart = new CountdownTimer();
 			countdownToStart.alustaAllalugemist();
-//			Ex3Timer harjutus = new Ex3Timer();
-//			harjutus.startTimerHr3();
 		});
 		
 		stopBtn.setOnAction(event ->{

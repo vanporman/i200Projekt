@@ -20,9 +20,7 @@ public class Excercise2Window {
 	static Integer hour = 0; // Stopperi tunnid
 	static String h = "00"; // Tundide formaat
 	static Integer minute = 0; // Stoppri minutid
-//	static String min = "00"; // Minutite formaat
 	static Integer second = 0; // Stopperi sekundid
-//	static String sec = "00"; // Sekundite formaat
 	
 	public Excercise2Window(Stage avaLaud){
 		avaLaud.setScene(sceneHr2);
@@ -95,7 +93,6 @@ public class Excercise2Window {
 		
 		stopBtn.setOnAction(event ->{
 			StartPage.taimeriOlek = 2;
-			
 //			Ex1And2Timer stop = new Ex1And2Timer();
 //			stop.startTimerHr();
 //			CountdownTimer stop2 = new CountdownTimer();
@@ -115,7 +112,7 @@ public class Excercise2Window {
 		
 		backButtonHr2.setOnAction(event ->{
 			StartPage.harjutuseValik = 0;
-			StartPage.taimeriOlek = 0;
+//			StartPage.taimeriOlek = 0;
 //			CountdownTimer stop = new CountdownTimer();
 //			stop.allaLugemiseTimer.cancel();
 			System.out.println("KLIKK TAGASI AVAVAATESSE");
