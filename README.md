@@ -16,11 +16,12 @@ Kui harjutus läbi, lõpetab taimer töö. Kasutaja võib taimeri uuesti käivit
 jättes sama või hoopis valides uue harjutuse.
 
 Kasutusjuhend:
-1. Ava rakendus
-2. Vali kas stopper või üks kolmest harjutusest <WALL SIT> <PLANK> <SIDE PLANK>
-3. Harjutuste juures vali aeg stardini
-4. Kui aeg valuitud, vajuta START ja oota starti
-5. Harjutuse lõppedes võid sama harjutus samadel parameetritel uuesti alustada või alguse stardini tühistada
-   ja uue aja sisestada
-6. TAGASI nupuga saab avavaatesse ja valida uus harjutus või sulgeda programm
-
+<ol>
+<li>Ava rakendus</li>
+<li>Vali kas stopper või üks kolmest harjutusest WALL SIT, PLANK, SIDE PLANK</li>
+<li>Harjutuste juures vali aeg stardini</li>
+<li>Kui aeg valuitud, vajuta START ja oota starti</li>
+<li>Harjutuse lõppedes võid sama harjutus samadel parameetritel uuesti alustada või alguse stardini tühistada
+   ja uue aja sisestada</li>
+<li>TAGASI nupuga saab avavaatesse ja valida uus harjutus või sulgeda programm</li>
+</ol>
